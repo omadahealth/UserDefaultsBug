@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  DefaultsBug
-//
-//  Created by Omada Developer on 12/14/17.
-//  Copyright © 2017 Omada Developer. All rights reserved.
-//
-
 import UIKit
 
 public enum Feature: String, Codable {
@@ -59,7 +51,7 @@ class ViewController: UIViewController {
     func read() {
         deviceSettings = existingSettings()
         let viewedOnboarding = deviceSettings.viewedOnboardings.contains(.global)
-        button.setTitle(viewedOnboarding ? "seen" : "not seen", for: .normal)
+        button.setTitle(viewedOnboarding ? "onboarding seen" : "onboarding not seen", for: .normal)
     }
 
     @IBAction func change(_ sender: Any) {
@@ -85,6 +77,5 @@ class ViewController: UIViewController {
             return DeviceSettings()
         }
     }
-
 }
 

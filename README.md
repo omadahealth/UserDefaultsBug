@@ -15,3 +15,8 @@
  ## Please star this repo if you care
 
  Add your comments to our open radar: http://www.openradar.me/radar?id=5057804138184704
+
+## Things we tried
+
+ - Adding sleep to wait did not help, see this branch: https://github.com/omadahealth/UserDefaultsBug/tree/wait-and-sleep-does-not-help
+ - Any other ideas?

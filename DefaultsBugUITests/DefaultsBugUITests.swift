@@ -12,7 +12,10 @@ class DefaultsBugUITests: XCTestCase {
     }
 
     override func tearDown() {
-        app.terminate()
+        sleep(3) // sleep to give iOS a chance to save defaults
+        XCUIDevice.shared.press(.home) // on deactivate we syncronize defaults
+        sleep(3) // sleep to give iOS one more chance to save defaults
+        app.terminate() // all this additional sleeping doesn't seem to matter and the test still fails
         super.tearDown()
     }
     

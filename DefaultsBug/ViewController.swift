@@ -63,9 +63,8 @@ class ViewController: UIViewController {
         let encoded = try! JSONEncoder().encode(deviceSettings)
         let jsonDictionary = try! JSONSerialization.jsonObject(with: encoded, options: [])
         userDefaults.set(jsonDictionary, forKey: "DeviceSettings")
-        if userDefaults.synchronize() {
-            read()
-        }
+        assert(userDefaults.synchronize(), "failed to synchronize()")
+        read()
     }
 
     private func existingSettings() -> DeviceSettings {
